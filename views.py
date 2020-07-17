@@ -91,8 +91,7 @@ def editar(id):
         return redirect(url_for('login', proxima=url_for('editar')))
     jogo = jogo_dao.busca_por_id(id)
     cta_ingreso_imagem = recupera_imagem(id)
-    return render_template('editar.html', titulo='Editar Registro', jogo=jogo
-                           , capa_jogo=cta_ingreso_imagem or 'capa_padrao.jpg')
+    return render_template('editar.html', titulo='Editar Registro', jogo=jogo, capa_jogo=cta_ingreso_imagem or 'capa_padrao.jpg')
 
 @app.route('/atualizar', methods=['POST',])
 def atualizar():
