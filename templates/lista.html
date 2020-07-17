@@ -1,0 +1,9 @@
+{% extends "template.html" %}
+{% block conteudo %}
+    <a class="btn btn-primary" href="{{ url_for('login') }}">Iniciar Cesión</a>
+    <a class="btn btn-primary" href="{{ url_for('novo') }}">Nuevo Registro</a>
+    <a class="btn btn-primary" href="{{ url_for('listado') }}">Listado de registros</a>
+    <a class="btn btn-danger" href="{{ url_for('logout') }}">Cerrar Cesión</a>
+    <a class="btn btn-primary" href="{{ url_for('listadousuarios') }}">Administrar usuarios</a>
+
+{% endblock %}

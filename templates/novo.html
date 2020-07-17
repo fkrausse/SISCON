@@ -1,0 +1,139 @@
+{% extends "template.html" %}
+{% block conteudo %}
+    <form action="{{ url_for('criar') }}" method="post" enctype="multipart/form-data">
+        <figure class="thumb col-md-3">
+            <img class="img-responsive" src="{{ url_for('imagem', nome_arquivo='capa_padrao.jpg') }}">
+            <figcaption>
+                <label class="fileContainer">
+                    Cambiar imagen
+                    <input type="file" name="arquivo" accept=".jpg">
+                </label>
+            </figcaption>
+        </figure>
+        <fieldset>
+          <div class="form-group">
+            <label for="cta_ingreso">Cta. Ingreso</label>
+              <select name="cta_ingreso">
+                <option value="caja">Caja (billetera) </option>
+                <option value="cda_itau_gs">CDA Itaú G$</option>
+                <option value="cda_itau_usd">CDA Itaú U$D</option>
+                <option value="ptmo_itau">Préstamo Itaú</option>
+                <option value="cda_itau_lp">CDA Itaú Programado 5 años</option>
+                <option value="alquiler">Alquiler</option>
+                <option value='mercado'>Mercado </option>
+                <option value="aguinaldo">Aguinaldo</option>
+                <option value="alquiler">Alquiler</option>
+                <option value="seguro_vehiculo">Seguro vehicular</option>
+                <option value="capacitaciones">Capacitaciones</option>
+                <option value="colaboracion">Colaboración</option>
+                <option value="combustible">Combustible</option>
+                <option value="compra_bienes_varios">Compra de bienes Varios</option>
+                <option value="consumicion">Consumición</option>
+                <option value="farmacia">Farmacia</option>
+                <option value="gastos_financieros">Gastos Financieros</option>
+                <option value="gastos_inmobiliarios">Gastos Inmobiliarios</option>
+                <option value="gastos_varios">Gastos Varios</option>
+                <option value="higiene_personal">Higiene Personal</option>
+                <option value="impuestos">Impuestos</option>
+                <option value="internet">Internet</option>
+                <option value="ips">IPS (Instituto Previsión Social)</option>
+                <option value="intereses">Intereses</option>
+                <option value="luz">Luz - ANDE</option>
+                <option value="obsequios">Obsequios / Regalos</option>
+                <option value="peajes">Peajes</option>
+                <option value="pension_mili">Pensión Mili</option>
+                <option value="prestacion_servicios">Prestación de Servicios</option>
+                <option value="recreacion">Recreación</option>
+                <option value="sueldo">Sueldo</option>
+                <option value="telefonia">Telefonia</option>
+                <option value="transporte">Transportes</option>
+                <option value="unimed">Unimed - Seguro salud</option>
+                <option value="ventas_varias">Ventas Varias</option>
+                <option value="vestimenta">Vestimenta = (ropas y calzados)</option>
+              </select>
+          </div>
+          <div class="form-group">
+            <label for="cta_egreso">Cta. Egreso</label>
+              <select name="cta_egreso">
+                <option value="caja">Caja (billetera) </option>
+                <option value="cda_itau_gs">CDA Itaú G$</option>
+                <option value="cda_itau_usd">CDA Itaú U$D</option>
+                <option value="ptmo_itau">Préstamo Itaú</option>
+                <option value="cda_itau_lp">CDA Itaú Programado 5 años</option>
+                <option value="alquiler">Alquiler</option>
+                <option value='mercado'>Mercado</option>
+                <option value="aguinaldo">Aguinaldo</option>
+                <option value="alquiler">Alquiler</option>
+                <option value="seguro_vehiculo">Seguro vehicular</option>
+                <option value="capacitaciones">Capacitaciones</option>
+                <option value="colaboracion">Colaboración</option>
+                <option value="combustible">Combustible</option>
+                <option value="compra_bienes_varios">Compra de bienes Varios</option>
+                <option value="consumicion">Consumición</option>
+                <option value="farmacia">Farmacia</option>
+                <option value="gastos_financieros">Gastos Financieros</option>
+                <option value="gastos_inmobiliarios">Gastos Inmobiliarios</option>
+                <option value="gastos_varios">Gastos Varios</option>
+                <option value="higiene_personal">Higiene Personal</option>
+                <option value="impuestos">Impuestos</option>
+                <option value="internet">Internet</option>
+                <option value="ips">IPS (Instituto Previsión Social)</option>
+                <option value="intereses">Intereses</option>
+                <option value="luz">Luz - ANDE</option>
+                <option value="obsequios">Obsequios / Regalos</option>
+                <option value="peajes">Peajes</option>
+                <option value="pension_mili">Pensión Mili</option>
+                <option value="prestacion_servicios">Prestación de Servicios</option>
+                <option value="recreacion">Recreación</option>
+                <option value="sueldo">Sueldo</option>
+                <option value="telefonia">Telefonia</option>
+                <option value="transporte">Transportes</option>
+                <option value="unimed">Unimed - Seguro salud</option>
+                <option value="ventas_varias">Ventas Varias</option>
+                <option value="vestimenta">Vestimenta = (ropas y calzados)</option>
+              </select>
+          </div>
+          <div class="form-group">
+            <label for="fecha_factura">Fecha Factura</label>
+            <input type="text" id="fecha_factura" name="fecha_factura" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="ncomprobande">Nº Comprobante</label>
+            <input type="text" id="ncomprobande" name="ncomprobante" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="nombre_entidad">Nombre Entidad</label>
+            <input type="text" id="nombre_entidad" name="nombre_entidad" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="ruc_entidad">Ruc Entidad</label>
+            <input type="text" id="ruc_entidad" name="ruc_entidad" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="forma_pago">Forma pago (credito/contado)</label>
+            <select name="forma_pago">
+              <option value="contado">Al Contado</option>
+              <option value="credito">A crédito</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="importe_total">Importe Total</label>
+            <input type="text" id="importe_total" name="importe_total" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="IVA5">Importe IVA 5%</label>
+            <input type="text" id="IVA5" name="IVA5" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="IVA10">Importe IVA 10%</label>
+            <input type="text" id="IVA10" name="IVA10" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="IVAexcentos">Importe IVA Excentas</label>
+            <input type="text" id="IVAexcentos" name="IVAexcentos" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-primary btn-salvar">Salvar</button>
+          <a class="btn btn-danger" href="{{ url_for('index') }}">Voltar</a>
+        </fieldset>
+    </form>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "template.html" %}
+{% block conteudo %}
+    <a class="btn btn-primary" href="{{ url_for('actualizar') }}"> Actualizar</a>
+    <a class="btn btn-danger" href="{{ url_for('index') }}"> Volver a inicio</a>
+        <table class="table table-striped table-responsive table-bordered">
+            <thead class="thead-default">
+                <tr>
+                    <th>Cta. Ingreso</th>
+                    <th>Cta. Salida</th>
+                    <th>Fecha Factura</th>
+                    <th>Nº Comprobante</th>
+                    <th>Nombre Entidad</th>
+                    <th>RUC Entidad</th>
+                    <th>Forma pago</th>
+                    <th>Importe Total</th>
+                    <th>Importe IVA 5%</th>
+                    <th>Importe IVA 10%</th>
+                    <th>Importe IVA Excentos</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for jogo in jogos %}
+                <tr>
+                    <td>{{ jogo.cta_ingreso }}</td>
+                    <td>{{ jogo.cta_egreso }}</td>
+                    <td>{{ jogo.fecha_factura }}</td>
+                    <td>{{ jogo.ncomprobante }}</td>
+                    <td>{{ jogo.nombre_entidad }}</td>
+                    <td>{{ jogo.ruc_entidad }}</td>
+                    <td>{{ jogo.forma_pago }}</td>
+                    <td>{{ jogo.importe_total }}</td>
+                    <td>{{ jogo.IVA5 }}</td>
+                    <td>{{ jogo.IVA10 }}</td>
+                    <td>{{ jogo.IVAexcentos }}</td>
+                    <td>
+                        <a href="{{ url_for('editar', id=jogo.id) }}">Editar</a>
+                        <a href="{{ url_for('deletar', id=jogo.id) }}">Deletar</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+{% endblock %}
