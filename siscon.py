@@ -10,6 +10,6 @@ db = MySQL(app)
 from views import *
 
 if __name__ == '__main__':
-    app.run(debug=Flase)
+    app.run(debug=False)
 
 # funcionando normalmente
