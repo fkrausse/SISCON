@@ -1,7 +1,7 @@
 import os 
 
 
-SECRET_KEY = 'alura'
+SECRET_KEY = 'CLEARDB_DATABASE_URL'
 
 MYSQL_HOST = "us-cdbr-east-02.cleardb.com"
 MYSQL_USER = "bffef14ac89b72"
