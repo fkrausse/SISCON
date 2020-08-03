@@ -8,4 +8,4 @@ MYSQL_PASSWORD = "3f269b60"
 MYSQL_DB = "heroku_c297a0dd5b30859"
 MYSQL_PORT = 5000
 
-UPLOAD_PATH = os.path.dirname(os.path.abspath(__file__)) + '/uploads'
+#UPLOAD_PATH = os.path.dirname(os.path.abspath(__file__)) + '/uploads'
