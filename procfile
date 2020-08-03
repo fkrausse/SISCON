@@ -1,1 +1,1 @@
-web: gunicorn siscon
+web: python siscon.py
