@@ -1,1 +1,1 @@
-web: python siscon.py
+web: python siscon: app
